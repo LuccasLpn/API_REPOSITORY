@@ -1,1 +1,13 @@
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: root
+      password: lu072324
+      database: estoque
+      port: 27017
+      host: localhost
 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

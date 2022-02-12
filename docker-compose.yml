@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo-api
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: lu072324
+    ports:
+      - 27017:27017
+    volumes:
+      - projeto03_data:/var/lib/mysql
+
+
+volumes:
+  projeto03_data:
