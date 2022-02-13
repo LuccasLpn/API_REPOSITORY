@@ -17,4 +17,5 @@ public class Model {
     @JsonFormat(pattern = "yyyy/mm/dd")
     private LocalDate dataAtualizacao;
 
+
 }

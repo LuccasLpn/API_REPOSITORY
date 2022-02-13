@@ -8,6 +8,3 @@ spring:
       port: 27017
       host: localhost
 
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
