@@ -26,7 +26,13 @@ public class EstoqueController {
     @DeleteMapping(path = "/delete")
     public ResponseEntity<Void>delete(@RequestBody EstoquePut estoquePut){
         estoqueService.delete(estoquePut);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping(path = "/update")
+    public ResponseEntity<Void>update(@RequestBody EstoquePut estoquePut){
+        estoqueService.update(estoquePut);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @GetMapping(path = "/findAll")

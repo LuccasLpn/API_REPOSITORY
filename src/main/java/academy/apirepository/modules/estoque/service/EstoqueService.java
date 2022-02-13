@@ -23,6 +23,13 @@ public class EstoqueService {
         return repository.save(estoque);
     }
 
+    public void update(EstoquePut estoquePut){
+        Estoque estoque = new Estoque(estoquePut.getTipo(), estoquePut.getSubTipo());
+        estoque.setPao(estoquePut.getPao());
+        estoque.setDataAtualizacao(LocalDate.now());
+        repository.save(estoque);
+    }
+
     public void delete(EstoquePut estoquePut){
         Estoque estoque = new Estoque(estoquePut.getTipo(), estoquePut.getSubTipo());
         repository.delete(estoque);
