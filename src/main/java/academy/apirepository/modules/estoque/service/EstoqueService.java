@@ -2,7 +2,8 @@ package academy.apirepository.modules.estoque.service;
 
 import academy.apirepository.modules.estoque.domain.Estoque;
 import academy.apirepository.modules.estoque.repository.EstoqueRepository;
-import academy.apirepository.modules.estoque.request.Model;
+import academy.apirepository.modules.estoque.request.EstoquePost;
+import academy.apirepository.modules.estoque.request.EstoquePut;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +16,16 @@ public class EstoqueService {
 
     private final EstoqueRepository repository;
 
-    public Estoque save(Model model){
-        Estoque estoque = new Estoque(model.getTipo(), model.getSubTipo());
-        estoque.setPao(model.getPao());
+    public Estoque save(EstoquePost estoquePost){
+        Estoque estoque = new Estoque(estoquePost.getTipo(), estoquePost.getSubTipo());
         estoque.setDataAtualizacao(LocalDate.now());
+        estoque.setPao(estoquePost.getPao());
         return repository.save(estoque);
+    }
+
+    public void delete(EstoquePut estoquePut){
+        Estoque estoque = new Estoque(estoquePut.getTipo(), estoquePut.getSubTipo());
+        repository.delete(estoque);
     }
 
     public List<Estoque> findAll(){

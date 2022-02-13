@@ -1,14 +1,11 @@
 package academy.apirepository.modules.estoque.domain;
 
 import academy.apirepository.modules.estoque.enums.PaoEnum;
-import academy.apirepository.modules.estoque.request.Model;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.io.Serializable;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Document(collection = "Estoque")
 @AllArgsConstructor
@@ -28,7 +25,6 @@ public class Estoque {
         String tipo;
         String subTipo;
     }
-
 
     private PaoEnum pao;
     private LocalDate dataAtualizacao;
