@@ -20,13 +20,19 @@ public class Estoque {
         id = new KeyCompose(tipo, subTipo);
     }
 
-    @Value
-    public static class KeyCompose implements Serializable {
+    @Value public static class KeyCompose implements Serializable {
         String tipo;
         String subTipo;
     }
 
     private PaoEnum pao;
     private LocalDate dataAtualizacao;
+    private String proteina;
+    private Integer alface;
+    private Integer tomate;
+    private Integer queijo;
+    private Integer picles;
+
+    
 
 }

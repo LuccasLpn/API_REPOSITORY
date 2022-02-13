@@ -18,4 +18,9 @@ public class EstoquePut {
     private PaoEnum pao;
     @JsonFormat(pattern = "yyyy/mm/dd")
     private LocalDate dataAtualizacao;
+    private String proteina;
+    private Integer alface;
+    private Integer tomate;
+    private Integer queijo;
+    private Integer picles;
 }

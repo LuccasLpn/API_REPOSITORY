@@ -1,6 +1,7 @@
 package academy.apirepository.modules.estoque.service;
 
 import academy.apirepository.modules.estoque.domain.Estoque;
+import academy.apirepository.modules.estoque.enums.PaoEnum;
 import academy.apirepository.modules.estoque.repository.EstoqueRepository;
 import academy.apirepository.modules.estoque.request.EstoquePost;
 import academy.apirepository.modules.estoque.request.EstoquePut;
@@ -20,6 +21,11 @@ public class EstoqueService {
         Estoque estoque = new Estoque(estoquePost.getTipo(), estoquePost.getSubTipo());
         estoque.setDataAtualizacao(LocalDate.now());
         estoque.setPao(estoquePost.getPao());
+        estoque.setProteina(estoquePost.getProteina());
+        estoque.setAlface(estoquePost.getAlface());
+        estoque.setTomate(estoquePost.getTomate());
+        estoque.setQueijo(estoquePost.getQueijo());
+        estoque.setPicles(estoquePost.getPicles());
         return repository.save(estoque);
     }
 
@@ -27,6 +33,11 @@ public class EstoqueService {
         Estoque estoque = new Estoque(estoquePut.getTipo(), estoquePut.getSubTipo());
         estoque.setPao(estoquePut.getPao());
         estoque.setDataAtualizacao(LocalDate.now());
+        estoque.setProteina(estoquePut.getProteina());
+        estoque.setAlface(estoquePut.getAlface());
+        estoque.setTomate(estoquePut.getTomate());
+        estoque.setQueijo(estoquePut.getQueijo());
+        estoque.setPicles(estoquePut.getPicles());
         repository.save(estoque);
     }
 
