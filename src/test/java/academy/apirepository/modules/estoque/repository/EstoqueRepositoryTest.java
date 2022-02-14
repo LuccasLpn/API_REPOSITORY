@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 
+import java.util.Optional;
+
 
 @DataMongoTest
 @DisplayName("Test For EstoqueRepository")
@@ -38,5 +40,17 @@ class EstoqueRepositoryTest {
         Assertions.assertThat(savedUpdate).isNotNull();
         Assertions.assertThat(savedUpdate.getPicles()).isEqualTo(savedEstoque.getPicles());
     }
+
+    @Test
+    @DisplayName("Delete Removes Estoque When SuccessFull")
+    void Delete_RemovesEstoque_WhenSuccessFull(){
+        Estoque estoque = EstoqueCreator.createdEstoqueTobeSaved();
+        Estoque savedEstoque = this.repository.save(estoque);
+        this.repository.delete(savedEstoque);
+        Optional<Estoque> animeOptiniol = this.repository.findById(savedEstoque.getId());
+        Assertions.assertThat(animeOptiniol.isEmpty());
+    }
+
+
 
 }
