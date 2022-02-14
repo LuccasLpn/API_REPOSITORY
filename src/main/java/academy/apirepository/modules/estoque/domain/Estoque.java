@@ -15,16 +15,13 @@ import java.time.LocalDate;
 public class Estoque {
 
     @Id public KeyCompose id;
-
     public Estoque(String tipo, String subTipo){
         id = new KeyCompose(tipo, subTipo);
     }
-
     @Value public static class KeyCompose implements Serializable {
         String tipo;
         String subTipo;
     }
-
     private PaoEnum pao;
     private LocalDate dataAtualizacao;
     private String proteina;
@@ -32,7 +29,4 @@ public class Estoque {
     private Integer tomate;
     private Integer queijo;
     private Integer picles;
-
-    
-
 }

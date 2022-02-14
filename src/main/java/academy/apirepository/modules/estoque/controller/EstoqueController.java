@@ -39,7 +39,4 @@ public class EstoqueController {
     public ResponseEntity<List<Estoque>>findAll(){
         return ResponseEntity.ok(estoqueService.findAll());
     }
-
-
-
 }

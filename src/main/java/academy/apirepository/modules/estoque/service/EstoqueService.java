@@ -1,7 +1,6 @@
 package academy.apirepository.modules.estoque.service;
 
 import academy.apirepository.modules.estoque.domain.Estoque;
-import academy.apirepository.modules.estoque.enums.PaoEnum;
 import academy.apirepository.modules.estoque.repository.EstoqueRepository;
 import academy.apirepository.modules.estoque.request.EstoquePost;
 import academy.apirepository.modules.estoque.request.EstoquePut;
@@ -49,5 +48,4 @@ public class EstoqueService {
     public List<Estoque> findAll(){
         return repository.findAll();
     }
-
 }

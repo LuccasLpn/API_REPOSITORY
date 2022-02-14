@@ -1,17 +1,18 @@
 package academy.apirepository.modules.estoque.request;
 
-import academy.apirepository.modules.estoque.domain.Estoque;
 import academy.apirepository.modules.estoque.enums.PaoEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Builder
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class EstoquePost {
 
     private String tipo;
