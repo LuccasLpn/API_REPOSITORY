@@ -28,4 +28,15 @@ class EstoqueRepositoryTest {
         Assertions.assertThat(savedEstoque.getPao()).isEqualTo(estoque.getPao());
     }
 
+    @Test
+    @DisplayName("Saved Update Estoque When SuccessFull")
+    void Save_UpdateEstoque_WhenSuccessFull(){
+        Estoque estoque = EstoqueCreator.createdEstoqueTobeSaved();
+        Estoque savedEstoque = this.repository.save(estoque);
+        savedEstoque.setPicles(300);
+        Estoque savedUpdate = this.repository.save(estoque);
+        Assertions.assertThat(savedUpdate).isNotNull();
+        Assertions.assertThat(savedUpdate.getPicles()).isEqualTo(savedEstoque.getPicles());
+    }
+
 }
