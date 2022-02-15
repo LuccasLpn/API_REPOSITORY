@@ -4,6 +4,7 @@ import academy.apirepository.modules.estoque.domain.Estoque;
 import academy.apirepository.modules.estoque.enums.PaoEnum;
 import academy.apirepository.modules.estoque.repository.EstoqueRepository;
 import academy.apirepository.modules.estoque.repository.util.EstoqueCreator;
+import academy.apirepository.modules.estoque.repository.util.EstoquePostCreator;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -52,6 +53,12 @@ class EstoqueServiceTest {
         Assertions.assertThat(estoques.get(0).getProteina()).isEqualTo(proteina);
     }
 
+    @Test
+    @DisplayName("Save Return Estoque When SuccessFull")
+    void Save_ReturnEstoqueWhenSuccessFull(){
+        Estoque savedEstoque = service.save(EstoquePostCreator.createdEstoquePost());
+        Assertions.assertThat(savedEstoque).isNotNull().isEqualTo(EstoqueCreator.createdEstoqueTobeSaved());
+    }
 
 
 }
