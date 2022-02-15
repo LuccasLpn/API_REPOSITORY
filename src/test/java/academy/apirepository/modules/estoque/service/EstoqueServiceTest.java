@@ -5,6 +5,8 @@ import academy.apirepository.modules.estoque.enums.PaoEnum;
 import academy.apirepository.modules.estoque.repository.EstoqueRepository;
 import academy.apirepository.modules.estoque.repository.util.EstoqueCreator;
 import academy.apirepository.modules.estoque.repository.util.EstoquePostCreator;
+import academy.apirepository.modules.estoque.repository.util.EstoquePutCreator;
+import academy.apirepository.modules.estoque.request.EstoquePut;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -58,6 +60,12 @@ class EstoqueServiceTest {
     void Save_ReturnEstoqueWhenSuccessFull(){
         Estoque savedEstoque = service.save(EstoquePostCreator.createdEstoquePost());
         Assertions.assertThat(savedEstoque).isNotNull().isEqualTo(EstoqueCreator.createdEstoqueTobeSaved());
+    }
+
+    @Test
+    @DisplayName("Update Replace Estoque When SuccessFull")
+    void Update_ReplaceEstoque_WhenSuccessFull(){
+        Assertions.assertThatCode(() -> service.update(EstoquePutCreator.createdEstoquePut()));
     }
 
 
