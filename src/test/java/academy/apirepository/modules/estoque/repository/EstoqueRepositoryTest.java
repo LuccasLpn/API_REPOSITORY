@@ -15,11 +15,8 @@ import java.util.Optional;
 @DisplayName("Test For EstoqueRepository")
 class EstoqueRepositoryTest {
 
-
     @Autowired
     private EstoqueRepository repository;
-
-
 
     @Test
     @DisplayName("Saved Persist Estoque When SuccessFull")
@@ -50,7 +47,5 @@ class EstoqueRepositoryTest {
         Optional<Estoque> animeOptiniol = this.repository.findById(savedEstoque.getId());
         Assertions.assertThat(animeOptiniol.isEmpty());
     }
-
-
 
 }

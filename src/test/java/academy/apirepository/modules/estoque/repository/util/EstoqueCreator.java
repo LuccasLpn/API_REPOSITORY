@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 public class EstoqueCreator {
 
-
     public static Estoque createdEstoqueTobeSaved(){
         EstoquePost estoquePost = new EstoquePost();
         Estoque estoque = new Estoque(estoquePost.getTipo(), estoquePost.getSubTipo());
@@ -20,4 +19,5 @@ public class EstoqueCreator {
         estoque.setPicles(estoquePost.getPicles());
         return estoque;
     }
+
 }
