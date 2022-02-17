@@ -69,4 +69,12 @@ class EstoqueServiceTest {
     }
 
 
+    @Test
+    @DisplayName("Delete Removes Estoque When SuccessFull")
+    void Delete_RemovesEstoque_WhenSuccessFull(){
+        EstoquePut estoquePut = new EstoquePut();
+        Estoque estoque = new Estoque(estoquePut.getTipo(), estoquePut.getSubTipo());
+
+     /*   Assertions.assertThatCode(()->service.delete(estoque)).doesNotThrowAnyException();*/
+    }
 }
